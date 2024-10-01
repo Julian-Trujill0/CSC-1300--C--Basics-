@@ -1,0 +1,23 @@
+do
+        {
+            for(int i =0; i <numPlayers; i++)
+            {
+                currentPlayer = names[i];
+                rollNum = rollDice(currentPlayer);
+                boardSpace[i] = boardSpace[i] + rollNum;
+                cout << currentPlayer << "IS NOW ON SPACE "<<boardSpace[i] <<endl;
+                if (boardSpace[i]<spaces)
+                {
+                    activateActionSpace(names, boardSpace, money, maxPlayers, numPlayers, i );
+                }
+                else
+                break;
+
+            }
+            space = boardSpace[0];
+            for(int i =0; i<numPlayers; i++)
+            {
+                if(boardSpace[i]>space)
+                space = boardSpace[i];
+            }
+        }while(space <25);
